@@ -69,7 +69,10 @@ request.interceptors.response.use(async (response: any) => {
   } else {
     return responseData.data;
   }
-  return null;
+  if (responseData.message && responseData.message === 'Invalid credentials') {
+    return null;
+  }
+  return responseData;
 });
 
 
