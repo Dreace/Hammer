@@ -7,16 +7,16 @@ import webpackPlugin from './plugin.config';
 const { winPath } = utils;
 const { REACT_APP_ENV, GA_KEY } = process.env;
 export default defineConfig({
-  externals: {
-    react: 'window.React',
-    'react-dom': 'window.React-DOM',
-    ant: 'antd',
-  },
-  scripts: [
-    'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js',
-    'https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js',
-    'https://cdn.jsdelivr.net/npm/antd@4.1.5/dist/antd.min.js',
-  ],
+  // externals: {
+  //   react: 'window.React',
+  //   'react-dom': 'window.React-DOM',
+  //   ant: 'antd',
+  // },
+  // scripts: [
+  //   'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js',
+  //   'https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js',
+  //   'https://cdn.jsdelivr.net/npm/antd@4.1.5/dist/antd.min.js',
+  // ],
   hash: true,
   antd: {},
   analytics: GA_KEY
