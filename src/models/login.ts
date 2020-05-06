@@ -27,7 +27,6 @@ const Model: LoginModelType = {
   effects: {
     * login({ payload }, { call }) {
       const response = yield call(Login, payload);
-      debugger;
       if (response) {
         sessionStorage.setItem('access_token', response.access_token);
         const urlParams = new URL(window.location.href);

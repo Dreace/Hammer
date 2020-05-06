@@ -5,7 +5,7 @@ import { getLog } from '@/services/dashboard/log';
 export enum LogLevelType {
   DEBUG,
   INFO,
-  WARN,
+  WARNING,
   ERROR,
   FATAL,
 }
@@ -34,10 +34,12 @@ const LogModel: LogLineModelType = {
   effects: {
     * fetch(_, { call, put }) {
       const response = yield call(getLog);
-      yield put({
-        type: 'save',
-        payload: response,
-      });
+      if (response) {
+        yield put({
+          type: 'save',
+          payload: response,
+        });
+      }
     },
   },
   reducers: {

@@ -6,7 +6,7 @@ import styles from '@/pages/DashBoard/Log/index.less';
 const levelColor = {
   DEBUG: '#111111',
   INFO: '#006600',
-  WARN: '#FF9900',
+  WARNING: '#FF9900',
   ERROR: '#FF3300',
   FATAL: '#990000',
 };
@@ -20,7 +20,7 @@ const LoginLineItem: React.FC<LogLineItemProps> = (props) => {
   const item = props.logLine;
   return (
     <List.Item className={styles.listItem} style={{ color }}>
-      {`[${new Date(item.time).toLocaleString()}] ${item.level} ${item.message}`}
+      {`[${new Date(item.time).toLocaleString()}] ${item.level} ${item.message.replace(/\\n/, '\n')}`}
     </List.Item>
   );
 };
