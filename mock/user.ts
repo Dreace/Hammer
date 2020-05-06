@@ -50,7 +50,7 @@ export default {
     },
   ],
   'POST /api/login': (req: Request, res: Response) => {
-    const { password, username: username } = req.body;
+    const { password, username } = req.body;
     if (password === 'admin' && username === 'admin') {
       res.send({
         code: 0,

@@ -28,7 +28,7 @@ const Model: LoginModelType = {
     * login({ payload }, { call }) {
       const response = yield call(Login, payload);
       if (response) {
-        sessionStorage.setItem('access_token', response.access_token);
+        localStorage.setItem('access_token', response.access_token);
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
         let { redirect } = params as { redirect: string };

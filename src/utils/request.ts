@@ -49,7 +49,7 @@ const errorHandler = (error: { response: Response }): Response => {
  * 配置request请求时的默认参数
  */
 const request = extend({
-  prefix: process.env.REACT_APP_ENV === 'production' ? 'https://hammer-api.dreace.top' : '',
+  prefix: process.env.NODE_ENV === 'production' ? 'https://hammer-api.dreace.top' : '',
   errorHandler, // 默认错误处理
   credentials: 'include', // 默认请求是否带上cookie
 });
@@ -57,7 +57,7 @@ request.interceptors.request.use((url, options) => {
   const optionsWithToken = options;
   if (optionsWithToken && optionsWithToken.headers) {
     const requestHeaders: HeadersInit = new Headers();
-    requestHeaders.set('Authorization', `Bearer ${sessionStorage.getItem('access_token') || ''}`);
+    requestHeaders.set('Authorization', `Bearer ${localStorage.getItem('access_token') || ''}`);
     optionsWithToken.headers = requestHeaders;
   }
   return { url, optionsWithToken };
