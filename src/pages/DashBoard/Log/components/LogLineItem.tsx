@@ -20,7 +20,7 @@ const LoginLineItem: React.FC<LogLineItemProps> = (props) => {
   const item = props.logLine;
   return (
     <List.Item className={styles.listItem} style={{ color }}>
-      {`[${new Date(item.time).toLocaleString()}] ${item.level} ${item.message.replace(/\\n/, '\n')}`}
+      {`[${new Date(item.time).toLocaleString()}] ${item.level} ${item.message.replace(/\\n/g, '\n')}`}
     </List.Item>
   );
 };
