@@ -1,5 +1,6 @@
 import { MenuDataItem } from '@ant-design/pro-layout';
 import { LogLine } from '@/models/dashboard/log';
+import { NoticeModelState } from '@/models/manager/notice';
 import { GlobalModelState } from './global';
 import { DefaultSettings as SettingModelState } from '../../config/defaultSettings';
 import { UserModelState } from './user';
@@ -25,7 +26,8 @@ export interface ConnectState {
   settings: SettingModelState;
   user: UserModelState;
   login: StateType;
-  log:LogLine[];
+  log: LogLine[];
+  notice: NoticeModelState;
 }
 
 export interface Route extends MenuDataItem {

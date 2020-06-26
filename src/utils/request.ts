@@ -53,15 +53,23 @@ const request = extend({
   errorHandler, // 默认错误处理
   credentials: 'include', // 默认请求是否带上cookie
 });
+
 request.interceptors.request.use((url, options) => {
-  const optionsWithToken = options;
-  if (optionsWithToken && optionsWithToken.headers) {
-    const requestHeaders: HeadersInit = new Headers();
-    requestHeaders.set('Authorization', `Bearer ${localStorage.getItem('access_token') || ''}`);
-    optionsWithToken.headers = requestHeaders;
-  }
-  return { url, optionsWithToken };
+  // const optionsWithToken = options;
+  // if (optionsWithToken && optionsWithToken.headers) {
+  //   const requestHeaders: Headers = new Headers();
+  //   requestHeaders.set('Authorization', `Bearer ${localStorage.getItem('access_token') || ''}`);
+  //   optionsWithToken.headers = requestHeaders;
+  // }
+  const headers = {
+    Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
+  };
+  return {
+    url,
+    options: { ...options, headers },
+  };
 });
+
 request.interceptors.response.use(async (response: any) => {
   const responseData = await response.clone().json();
   if (responseData.code !== 0) {
@@ -74,6 +82,5 @@ request.interceptors.response.use(async (response: any) => {
   }
   return responseData;
 });
-
 
 export default request;
