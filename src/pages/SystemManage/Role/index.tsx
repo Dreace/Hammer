@@ -30,7 +30,7 @@ class RolePage extends Component<RoleProps> {
       name: '',
       chineseName: '',
       description: '',
-      time: ''
+      createTime: ''
     },
   };
 
@@ -54,7 +54,7 @@ class RolePage extends Component<RoleProps> {
     },
     {
       title: '创建时间',
-      dataIndex: 'time',
+      dataIndex: 'createTime',
       valueType: 'dateTime',
       width: 200,
     },
@@ -187,7 +187,7 @@ class RolePage extends Component<RoleProps> {
                 name: '',
                 chineseName: '',
                 description: '',
-                time: ''
+                createTime: ''
               },
             });
           }}
@@ -199,7 +199,7 @@ class RolePage extends Component<RoleProps> {
                 name: '',
                 chineseName: '',
                 description: '',
-                time: ''
+                createTime: ''
               },
             });
             this.handleEdit(id, values);

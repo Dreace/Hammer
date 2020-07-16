@@ -8,14 +8,14 @@ const roles: Role[] = [
     name: 'admin',
     chineseName: '管理员',
     description: '拥有至高无上的权力',
-    time: '2020-07-15T06:13:37Z'
+    createTime: '2020-07-15T06:13:37Z'
   },
   {
     id: 2,
     name: 'editor',
     chineseName: '编辑员',
     description: '具有一些权力',
-    time: '2020-07-15T06:13:37Z'
+    createTime: '2020-07-15T06:13:37Z'
   },
 ];
 export default {
@@ -29,7 +29,7 @@ export default {
       name: req.body.name,
       chineseName: req.body.chineseName,
       description: req.body.description,
-      time: moment().utc().format()
+      createTime: moment().utc().format()
     });
     res.send({
       code: 0,

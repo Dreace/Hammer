@@ -31,6 +31,17 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
     const fieldsValue = await form.validateFields();
     handleUpdate({ ...formValues, ...fieldsValue });
   };
+
+  const checkRoleName = (rule: any, value: { number: number; }) => {
+    const reg = /^[a-zA-Z_]{1,}$/
+    // @ts-ignore
+    if (value && reg.test(value) ) { // 校验条件自定义
+      return Promise.resolve();
+    }
+    // eslint-disable-next-line prefer-promise-reject-errors
+    return Promise.reject('权限名为字母加下划线');
+  }
+
   return (
     <Modal
       width={640}
@@ -43,7 +54,7 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
       afterClose={() => form.resetFields()}
     >
       <Form form={form} initialValues={createFormInitialValues}>
-        <Form.Item label="权限名" name="name" rules={[{ required: true }]}>
+        <Form.Item label="权限名" name="name" rules={[{ required: true, validator: checkRoleName }]}>
           <Input />
         </Form.Item>
         <Form.Item label="中文名" name="chineseName" rules={[{ required: true }]}>

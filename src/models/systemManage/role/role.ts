@@ -6,7 +6,7 @@ export interface Role {
   name: string;
   chineseName: string;
   description: string;
-  time: string;
+  createTime: string;
 }
 
 export interface RoleModelState {
