@@ -3,7 +3,7 @@ import RenderAuthorize from '@/components/Authorized';
 /* eslint-disable import/no-mutable-exports */
 let Authorized = RenderAuthorize('guest');
 
-// Reload the rights component
+// Reload the rights components
 const reloadAuthorized = (authority: string | string[]): void => {
   Authorized = RenderAuthorize(authority);
 };

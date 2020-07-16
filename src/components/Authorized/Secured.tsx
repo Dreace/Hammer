@@ -14,7 +14,7 @@ export const isComponentClass = (component: React.ComponentClass | React.ReactNo
   return isComponentClass(proto);
 };
 
-// Determine whether the incoming component has been instantiated
+// Determine whether the incoming components has been instantiated
 // AuthorizedRoute is already instantiated
 // Authorized  render is already instantiated, children is no instantiated
 // Secured is not instantiated

@@ -1,6 +1,6 @@
 /**
  * Ant Design Pro v4 use `@ant-design/pro-layout` to handle Layout.
- * You can view component api by:
+ * You can view components api by:
  * https://github.com/ant-design/ant-design-pro-layout
  */
 import ProLayout, {

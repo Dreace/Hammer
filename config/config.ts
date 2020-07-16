@@ -94,24 +94,38 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              path: '/systemManage',
+              name: '系统管理',
+              icon: 'setting',
+              authority: ['admin'],
+              routes: [
+                {
+                  path: './role',
+                  name: '角色管理',
+                  icon: 'team',
+                  component: './SystemManage/Role',
+                }
+              ],
+            },
             // {
             //   path: '/welcome',
             //   name: 'welcome',
             //   icon: 'smile',
-            //   component: './Welcome',
+            //   components: './Welcome',
             // },
             // {
             //   path: '/admin',
             //   name: 'admin',
             //   icon: 'crown',
-            //   component: './Admin',
+            //   components: './Admin',
             //   authority: ['admin'],
             //   routes: [
             //     {
             //       path: '/admin/sub-page',
             //       name: 'sub-page',
             //       icon: 'smile',
-            //       component: './Welcome',
+            //       components: './Welcome',
             //       authority: ['admin'],
             //     },
             //   ],
