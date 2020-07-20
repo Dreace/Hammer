@@ -14,7 +14,7 @@ const EditForm: React.FC<EditFormProps> = (props) => {
   const [formValues] = useState<RoleParamsType>({
     name: props.values.name,
     chineseName: props.values.chineseName,
-    description: props.values.description
+    description: props.values.description,
   });
   const [form] = Form.useForm();
   form.setFieldsValue(props.values);

@@ -18,7 +18,7 @@ export interface CreateFormProps {
 const createFormInitialValues: CreateFormValueType = {
   name: '',
   chineseName: '',
-  description: ''
+  description: '',
 };
 
 const CreateForm: React.FC<CreateFormProps> = (props) => {
@@ -32,15 +32,14 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
     handleUpdate({ ...formValues, ...fieldsValue });
   };
 
-  const checkRoleName = (rule: any, value: { number: number; }) => {
-    const reg = /^[a-zA-Z_]{1,}$/
-    // @ts-ignore
-    if (value && reg.test(value) ) { // 校验条件自定义
-      return Promise.resolve();
+  const checkRoleName = (rule: any, value: string) => {
+    const reg = /^[a-zA-Z_]{1,25}$/;
+    if (!reg.test(value)) {
+      // 校验条件自定义
+      return Promise.reject(new Error('权限名为字母加下划线（1~25个字符）'));
     }
-    // eslint-disable-next-line prefer-promise-reject-errors
-    return Promise.reject('权限名为字母加下划线');
-  }
+    return Promise.resolve();
+  };
 
   return (
     <Modal
@@ -54,7 +53,16 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
       afterClose={() => form.resetFields()}
     >
       <Form form={form} initialValues={createFormInitialValues}>
-        <Form.Item label="权限名" name="name" rules={[{ required: true, validator: checkRoleName }]}>
+        <Form.Item
+          label="权限名"
+          name="name"
+          rules={[
+            {
+              required: true,
+              validator: checkRoleName,
+            },
+          ]}
+        >
           <Input />
         </Form.Item>
         <Form.Item label="中文名" name="chineseName" rules={[{ required: true }]}>

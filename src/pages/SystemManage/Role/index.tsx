@@ -18,7 +18,7 @@ interface RoleProps extends Partial<ConnectProps> {
 interface RolePageState {
   createModalVisible: boolean;
   editModalVisible: boolean;
-  willEditRole: Role;  // 与model中的数据对应
+  willEditRole: Role; // 与model中的数据对应
 }
 
 class RolePage extends Component<RoleProps> {
@@ -30,7 +30,7 @@ class RolePage extends Component<RoleProps> {
       name: '',
       chineseName: '',
       description: '',
-      createTime: ''
+      createTime: '',
     },
   };
 
@@ -45,7 +45,7 @@ class RolePage extends Component<RoleProps> {
     {
       title: '权限中文名',
       dataIndex: 'chineseName',
-      // width: 400,
+      width: 400,
     },
     {
       title: '权限描述',
@@ -187,7 +187,7 @@ class RolePage extends Component<RoleProps> {
                 name: '',
                 chineseName: '',
                 description: '',
-                createTime: ''
+                createTime: '',
               },
             });
           }}
@@ -199,7 +199,7 @@ class RolePage extends Component<RoleProps> {
                 name: '',
                 chineseName: '',
                 description: '',
-                createTime: ''
+                createTime: '',
               },
             });
             this.handleEdit(id, values);

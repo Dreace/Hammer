@@ -1,6 +1,6 @@
-# Ant Design Pro
+# Hammer
 
-This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
+使用 [Ant Design Pro](https://pro.ant.design) 开发的管理系统前端。
 
 ## Environment Prepare
 
