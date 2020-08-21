@@ -7,8 +7,8 @@ import { RoleModelState, Role } from '@/models/systemManage/role/role';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { ConnectState } from '@/models/connect';
 import { ConnectProps } from '@@/plugin-dva/connect';
-import EditForm from './components/EditForm';
 import { RoleParamsType } from '@/services/systemMange/role/role';
+import EditForm from './components/EditForm';
 import CreateForm, { CreateFormValueType } from './components/CreateForm';
 
 interface RoleProps extends Partial<ConnectProps> {
@@ -45,7 +45,7 @@ class RolePage extends Component<RoleProps> {
     {
       title: '权限中文名',
       dataIndex: 'chineseName',
-      width: 400,
+      width: 200,
     },
     {
       title: '权限描述',

@@ -54,6 +54,7 @@ class NoticePage extends Component<NoticeProps> {
       dataIndex: 'isStick',
       initialValue: false,
       width: 100,
+      filters: undefined,
       valueEnum: {
         false: { text: '否', status: 'Default' },
         true: { text: '是', status: 'Success' },
@@ -64,6 +65,7 @@ class NoticePage extends Component<NoticeProps> {
       dataIndex: 'isImportant',
       initialValue: false,
       width: 100,
+      filters: undefined,
       valueEnum: {
         false: { text: '否', status: 'Default' },
         true: { text: '是', status: 'Success' },

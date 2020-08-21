@@ -41,6 +41,10 @@ class Log extends Component<LogProps> {
   handleRefreshIntervalChange = (event: RadioChangeEvent) => {
     if (this.timerID) {
       clearInterval(this.timerID);
+      this.timerID = null;
+    }
+    if (event.target.value === '0') {
+      return;
     }
     this.timerID = setInterval(
       () => this.refreshLog(),
@@ -82,14 +86,14 @@ class Log extends Component<LogProps> {
             <Radio.Button value="asc">升序</Radio.Button>
             <Radio.Button value="dsc">降序</Radio.Button>
           </Radio.Group>
-          <Button className={styles.controlBarItem} type='primary' onClick={this.refreshLog}>刷新</Button>
+          <Button className={styles.controlBarItem} type="primary" onClick={this.refreshLog}>
+            刷新
+          </Button>
         </div>
         <List
           className={styles.list}
           dataSource={this.state.sort === 'asc' ? data.reverse() : data}
-          renderItem={item => (
-            <LoginLineItem logLine={item}/>
-          )}
+          renderItem={(item) => <LoginLineItem logLine={item} />}
         />
       </PageHeaderWrapper>
     );
