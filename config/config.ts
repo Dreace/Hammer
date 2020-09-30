@@ -92,6 +92,12 @@ export default defineConfig({
                   name: '公告',
                   component: './Manager/Notice',
                 },
+                {
+                  path: './insider',
+                  name: '内测',
+                  icon: 'hourglass',
+                  component: './Manager/Insider',
+                },
               ],
             },
             {
@@ -105,7 +111,7 @@ export default defineConfig({
                   name: '角色管理',
                   icon: 'team',
                   component: './SystemManage/Role',
-                }
+                },
               ],
             },
             // {
