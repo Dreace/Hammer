@@ -150,7 +150,8 @@ class SlidePage extends Component<SlideProps> {
 
   render() {
     // const actionRef = useRef<ActionType>();
-    const { slides: slideList } = this.props.slide;
+    let { slides: slideList } = this.props.slide;
+    slideList = slideList?.sort((a, b) => (a.index < b.index ? -1 : 0));
     return (
       <PageHeaderWrapper>
         <ProTable<Slide>
