@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Popconfirm, message } from 'antd';
+import { Button, Popconfirm, message, Popover, Image } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import ProTable, { ProColumns } from '@ant-design/pro-table';
 import { connect } from 'umi';
@@ -54,6 +54,15 @@ class SlidePage extends Component<SlideProps> {
     {
       title: '图片链接',
       dataIndex: 'imageUrl',
+      render: (_, record) => [
+        <>
+          <Popover content={<Image src={record.imageUrl} />} placement="bottom" trigger="hover">
+            <Button type="link" href={record.imageUrl} target="_blank">
+              {record.imageUrl}
+            </Button>
+          </Popover>
+        </>,
+      ],
     },
     {
       title: '操作',
