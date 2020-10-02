@@ -98,6 +98,12 @@ export default defineConfig({
                   icon: 'hourglass',
                   component: './Manager/Insider',
                 },
+                {
+                  path: './slide',
+                  name: '轮播图',
+                  icon: 'laptop',
+                  component: './Manager/Slide',
+                },
               ],
             },
             {
